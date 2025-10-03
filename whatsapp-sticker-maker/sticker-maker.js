@@ -473,7 +473,7 @@
         // Initialize particles animation
         function createParticles() {
             const container = document.createElement('div');
-            container.className = 'particle-icontainer';
+            container.className = 'particle-container';
             document.body.appendChild(container);
             
             for (let i = 0; i < 20; i++) {
