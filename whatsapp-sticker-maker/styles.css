@@ -46,7 +46,7 @@
             50% { transform: translateY(-10px); }
         }
 
-        h1 {
+        h3 {
             font-size: 3rem;
             background: var(--gradient);
             -webkit-background-clip: text;
@@ -496,7 +496,7 @@
 
         /* Responsive */
         @media (max-width: 768px) {
-            h1 {
+            h3 {
                 font-size: 2rem;
             }
             
