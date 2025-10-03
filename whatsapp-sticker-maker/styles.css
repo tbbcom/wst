@@ -23,8 +23,8 @@
             overflow-x: hidden;
         }
 
-        /* Glassmorphism Container */
-        .container {
+        /* Glassmorphism iContainer */
+        .icontainer {
             max-width: 1400px;
             margin: 0 auto;
             padding: 2rem;
@@ -88,7 +88,7 @@
         }
 
         /* Main Tool Interface */
-        .tool-container {
+        .tool-icontainer {
             display: grid;
             grid-template-columns: 300px 1fr 350px;
             gap: 2rem;
@@ -96,7 +96,7 @@
         }
 
         @media (max-width: 1200px) {
-            .tool-container {
+            .tool-icontainer {
                 grid-template-columns: 1fr;
             }
         }
@@ -110,7 +110,7 @@
         }
 
         /* Canvas Area */
-        .canvas-container {
+        .canvas-icontainer {
             position: relative;
             display: flex;
             flex-direction: column;
@@ -298,7 +298,7 @@
         }
 
         /* Particle Effects */
-        .particle-container {
+        .particle-icontainer {
             position: absolute;
             top: 0;
             left: 0;
@@ -500,7 +500,7 @@
                 font-size: 2rem;
             }
             
-            .tool-container {
+            .tool-icontainer {
                 grid-template-columns: 1fr;
             }
             
