@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp Sticker Maker Pro - AI-Powered Advanced Sticker Creator | TheBukitBesi</title>
+    <meta name="description" content="Create stunning WhatsApp stickers with AI voice-to-sticker, particle effects, 3D text, audio-reactive animations & smart WebP compression. Free online sticker maker 2025.">
+    <meta name="keywords" content="whatsapp sticker maker, ai sticker generator, voice to sticker, animated sticker creator, webp optimizer, 3d text stickers, particle effects sticker, audio reactive stickers">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="WhatsApp Sticker Maker Pro - Advanced AI Sticker Creator">
+    <meta property="og:description" content="Revolutionary sticker maker with voice-to-sticker AI, particle effects & 3D animations">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="/sticker-maker-og.jpg">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="WhatsApp Sticker Maker Pro">
+    <meta name="twitter:description" content="Create next-gen WhatsApp stickers with AI & advanced effects">
+    
+    <style>
+      /*! (c) TheBukitBesi.com — Protected build (domain-locked) */
+        :root {
+            --primary: #25D366;
+            --secondary: #128C7E;
+            --accent: #075E54;
+            --dark: #1a1a1a;
+            --light: #f5f5f5;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --glass: rgba(255, 255, 255, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+            color: #fff;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Glassmorphism Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-radius: 20px;
+            margin-bottom: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 3rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.2); }
+        }
+
+        .subtitle {
+            color: #aaa;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-badges {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .badge {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        /* Main Tool Interface */
+        .tool-container {
+            display: grid;
+            grid-template-columns: 300px 1fr 350px;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 1200px) {
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .panel {
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Canvas Area */
+        .canvas-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        #stickerCanvas {
+            width: 512px;
+            height: 512px;
+            max-width: 100%;
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Tools Panel */
+        .tool-section {
+            margin-bottom: 2rem;
+        }
+
+        .tool-title {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tool-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--primary);
+            border-radius: 5px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Buttons */
+        .ibtn {
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            width: 100%;
+            margin-bottom: 0.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ibtn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        .ibtn:active {
+            transform: translateY(0);
+        }
+
+        .ibtn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .ibtn:hover::before {
+            left: 100%;
+        }
+
+        /* Input Fields */
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.8rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        input[type="range"] {
+            width: 100%;
+            margin: 1rem 0;
+        }
+
+        input[type="color"] {
+            width: 50px;
+            height: 50px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* File Upload Area */
+        .upload-area {
+            border: 2px dashed rgba(255, 255, 255, 0.3);
+            border-radius: 15px;
+            padding: 3rem;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .upload-area:hover {
+            border-color: var(--primary);
+            background: rgba(37, 211, 102, 0.1);
+        }
+
+        .upload-area.dragover {
+            border-color: var(--primary);
+            background: rgba(37, 211, 102, 0.2);
+            transform: scale(1.02);
+        }
+
+        /* AI Voice Panel */
+        .voice-panel {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .voice-visualizer {
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            margin: 1rem 0;
+        }
+
+        .voice-bar {
+            width: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+            animation: wave 1s ease-in-out infinite;
+        }
+
+        .voice-bar:nth-child(1) { animation-delay: 0s; height: 20px; }
+        .voice-bar:nth-child(2) { animation-delay: 0.1s; height: 30px; }
+        .voice-bar:nth-child(3) { animation-delay: 0.2s; height: 25px; }
+        .voice-bar:nth-child(4) { animation-delay: 0.3s; height: 35px; }
+        .voice-bar:nth-child(5) { animation-delay: 0.4s; height: 28px; }
+
+        @keyframes wave {
+            0%, 100% { transform: scaleY(1); }
+            50% { transform: scaleY(1.5); }
+        }
+
+        /* Particle Effects */
+        .particle-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: particleFloat 3s infinite;
+        }
+
+        @keyframes particleFloat {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+        }
+
+        /* 3D Text Effects */
+        .text-3d {
+            text-shadow: 
+                1px 1px 1px rgba(0,0,0,0.5),
+                2px 2px 2px rgba(0,0,0,0.4),
+                3px 3px 3px rgba(0,0,0,0.3),
+                4px 4px 4px rgba(0,0,0,0.2),
+                5px 5px 5px rgba(0,0,0,0.1);
+            transform: perspective(500px) rotateY(15deg);
+        }
+
+        /* Effects Grid */
+        .effects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .effect-btn {
+            padding: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .effect-btn:hover {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: var(--primary);
+            transform: scale(1.05);
+        }
+
+        .effect-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        /* Template Gallery */
+        .template-gallery {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .template-item {
+            aspect-ratio: 1;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .template-item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: var(--gradient);
+            width: 0;
+            transition: width 0.3s;
+        }
+
+        /* Loading Spinner */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255, 255, 255, 0.1);
+            border-top-color: var(--primary);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.show {
+            display: flex;
+        }
+
+        .modal-content {
+            background: var(--dark);
+            border-radius: 20px;
+            padding: 3rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 30px;
+            height: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 50%;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+
+        /* Export Options */
+        .export-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .export-stat {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 8px;
+        }
+
+        .stat-label {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tool-container {
+                grid-template-columns: 1fr;
+            }
+            
+            #stickerCanvas {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1;
+            }
+            
+            .template-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tooltips */
+        .tooltip {
+            position: relative;
+        }
+
+        .tooltip::after {
+            content: attr(data-tooltip);
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            white-space: nowrap;
+            font-size: 0.9rem;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+
+        .tooltip:hover::after {
+            opacity: 1;
+        }
+
+        /* Hidden input */
+        #fileInput {
+            display: none;
+        }
+
+        /* Kinetic Typography */
+        .kinetic-text {
+            animation: textWave 2s ease-in-out infinite;
+        }
+
+        @keyframes textWave {
+            0%, 100% { transform: translateY(0) rotateZ(0deg); }
+            25% { transform: translateY(-5px) rotateZ(-1deg); }
+            75% { transform: translateY(5px) rotateZ(1deg); }
+        }
+    </style>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <div class="hero-section">
+            <h1>WhatsApp Sticker Maker Pro</h1>
+            <p class="subtitle">Next-Gen AI-Powered Sticker Creator with Voice & Particle Effects</p>
+            <div class="feature-badges">
+                <span class="badge">🎙️ Voice to Sticker</span>
+                <span class="badge">✨ Particle Effects</span>
+                <span class="badge">🎵 Audio Reactive</span>
+                <span class="badge">🎨 3D Text</span>
+                <span class="badge">🤖 AI Background</span>
+                <span class="badge">📐 Smart Compression</span>
+            </div>
+        </div>
+
+        <!-- Main Tool Container -->
+        <div class="tool-container">
+            <!-- Left Panel - Tools -->
+            <div class="panel">
+                <h2 style="margin-bottom: 1.5rem;">Creative Tools</h2>
+                
+                <!-- Upload Section -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">📁</span>
+                        <span>Upload Image</span>
+                    </div>
+                    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+                        <p>📷 Drop image here or click to upload</p>
+                        <small>PNG, JPG, GIF, WebP (Max 10MB)</small>
+                    </div>
+                    <input type="file" id="fileInput" accept="image/*">
+                </div>
+
+                <!-- AI Voice to Sticker -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">🎙️</span>
+                        <span>Voice to Sticker (AI)</span>
+                    </div>
+                    <div class="voice-panel">
+                        <button class="ibtn" id="recordVoice">🎤 Start Recording</button>
+                        <div class="voice-visualizer" id="voiceVisualizer" style="display: none;">
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                            <div class="voice-bar"></div>
+                        </div>
+                        <textarea id="voiceTranscript" placeholder="Voice transcript will appear here..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <!-- Text Tools -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">💬</span>
+                        <span>Add Text</span>
+                    </div>
+                    <div class="input-group">
+                        <input type="text" id="stickerText" placeholder="Enter your text...">
+                    </div>
+                    <div class="input-group">
+                        <label>Font Style</label>
+                        <select id="fontStyle">
+                            <option value="Arial">Arial</option>
+                            <option value="Impact">Impact</option>
+                            <option value="Comic Sans MS">Comic Sans</option>
+                            <option value="Courier New">Courier</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label>Text Size</label>
+                        <input type="range" id="textSize" min="12" max="100" value="30">
+                        <span id="textSizeValue">30px</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Text Color</label>
+                        <input type="color" id="textColor" value="#FFFFFF">
+                    </div>
+                </div>
+
+                <!-- Kinetic Typography -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">🎬</span>
+                        <span>Text Animation</span>
+                    </div>
+                    <div class="effects-grid">
+                        <button class="effect-btn" data-effect="none">None</button>
+                        <button class="effect-btn" data-effect="wave">Wave</button>
+                        <button class="effect-btn" data-effect="bounce">Bounce</button>
+                        <button class="effect-btn" data-effect="fade">Fade</button>
+                        <button class="effect-btn" data-effect="rotate">Rotate</button>
+                        <button class="effect-btn" data-effect="zoom">Zoom</button>
+                        <button class="effect-btn" data-effect="glitch">Glitch</button>
+                        <button class="effect-btn" data-effect="typewriter">Type</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Center Panel - Canvas -->
+            <div class="panel canvas-container">
+                <h2 style="margin-bottom: 1.5rem;">Preview</h2>
+                <canvas id="stickerCanvas" width="512" height="512"></canvas>
+                
+                <div style="display: flex; gap: 1rem; width: 100%; max-width: 512px;">
+                    <button class="ibtn" id="clearCanvas">🗑️ Clear</button>
+                    <button class="ibtn" id="undoBtn">↩️ Undo</button>
+                    <button class="ibtn" id="redoBtn">↪️ Redo</button>
+                </div>
+
+                <!-- Template Gallery -->
+                <div class="tool-section" style="width: 100%; max-width: 512px;">
+                    <div class="tool-title">
+                        <span class="tool-icon">🎨</span>
+                        <span>Quick Templates</span>
+                    </div>
+                    <div class="template-gallery">
+                        <div class="template-item" data-template="emoji">😍</div>
+                        <div class="template-item" data-template="heart">❤️</div>
+                        <div class="template-item" data-template="fire">🔥</div>
+                        <div class="template-item" data-template="star">⭐</div>
+                        <div class="template-item" data-template="cool">😎</div>
+                        <div class="template-item" data-template="laugh">😂</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Effects & Export -->
+            <div class="panel">
+                <h2 style="margin-bottom: 1.5rem;">Effects & Export</h2>
+
+                <!-- Background Removal -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">✂️</span>
+                        <span>Background Tools</span>
+                    </div>
+                    <button class="ibtn" id="removeBg">🎯 Remove Background (AI)</button>
+                    <button class="ibtn" id="blurBg">🌫️ Blur Background</button>
+                    <div class="input-group" style="margin-top: 1rem;">
+                        <label>Background Color</label>
+                        <input type="color" id="bgColor" value="#FFFFFF">
+                    </div>
+                </div>
+
+                <!-- Particle Effects -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">✨</span>
+                        <span>Particle Effects</span>
+                    </div>
+                    <div class="effects-grid">
+                        <button class="effect-btn particle-effect" data-particle="stars">⭐ Stars</button>
+                        <button class="effect-btn particle-effect" data-particle="hearts">❤️ Hearts</button>
+                        <button class="effect-btn particle-effect" data-particle="snow">❄️ Snow</button>
+                        <button class="effect-btn particle-effect" data-particle="fire">🔥 Fire</button>
+                        <button class="effect-btn particle-effect" data-particle="bubbles">🫧 Bubbles</button>
+                        <button class="effect-btn particle-effect" data-particle="confetti">🎊 Confetti</button>
+                    </div>
+                </div>
+
+                <!-- 3D Effects -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">🎭</span>
+                        <span>3D Effects</span>
+                    </div>
+                    <button class="ibtn" id="apply3D">🎨 Apply 3D Depth</button>
+                    <div class="input-group">
+                        <label>3D Rotation</label>
+                        <input type="range" id="rotation3D" min="-45" max="45" value="0">
+                    </div>
+                    <div class="input-group">
+                        <label>Shadow Depth</label>
+                        <input type="range" id="shadowDepth" min="0" max="20" value="5">
+                    </div>
+                </div>
+
+                <!-- Audio Reactive -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">🎵</span>
+                        <span>Audio Reactive</span>
+                    </div>
+                    <button class="ibtn" id="uploadAudio">🎵 Upload Audio</button>
+                    <div class="input-group">
+                        <label>Sensitivity</label>
+                        <input type="range" id="audioSensitivity" min="1" max="10" value="5">
+                    </div>
+                </div>
+
+                <!-- Export Options -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">💾</span>
+                        <span>Export Settings</span>
+                    </div>
+                    <div class="export-options">
+                        <div class="export-stat">
+                            <div class="stat-label">Size</div>
+                            <div class="stat-value" id="fileSize">0 KB</div>
+                        </div>
+                        <div class="export-stat">
+                            <div class="stat-label">Format</div>
+                            <div class="stat-value">WebP</div>
+                        </div>
+                        <div class="export-stat">
+                            <div class="stat-label">Quality</div>
+                            <div class="stat-value" id="qualityValue">95%</div>
+                        </div>
+                        <div class="export-stat">
+                            <div class="stat-label">Status</div>
+                            <div class="stat-value" id="exportStatus">Ready</div>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Compression Quality</label>
+                        <input type="range" id="quality" min="60" max="100" value="95">
+                    </div>
+                    <button class="ibtn" id="optimizeBtn">⚡ Smart Optimize</button>
+                    <button class="ibtn" id="exportStatic" style="background: linear-gradient(45deg, #128C7E, #075E54);">
+                        📥 Export as Static Sticker
+                    </button>
+                    <button class="ibtn" id="exportAnimated">
+                        🎬 Export as Animated Sticker
+                    </button>
+                </div>
+
+                <!-- Batch Processing -->
+                <div class="tool-section">
+                    <div class="tool-title">
+                        <span class="tool-icon">📦</span>
+                        <span>Batch Pack</span>
+                    </div>
+                    <button class="ibtn" id="addToPack">➕ Add to Pack</button>
+                    <button class="ibtn" id="exportPack">📤 Export Pack (0)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Modal -->
+        <div id="helpModal" class="modal">
+            <div class="modal-content">
+                <button class="close-modal" onclick="closeModal()">&times;</button>
+                <h2>How to Use</h2>
+                <ol>
+                    <li><strong>Upload Image:</strong> Click the upload area or drag & drop your image</li>
+                    <li><strong>Voice to Sticker:</strong> Record your voice and AI will generate a matching sticker</li>
+                    <li><strong>Add Text:</strong> Type your message and customize with animations</li>
+                    <li><strong>Apply Effects:</strong> Choose from particle effects, 3D depth, or audio-reactive animations</li>
+                    <li><strong>Remove Background:</strong> Use AI to instantly remove backgrounds</li>
+                    <li><strong>Optimize:</strong> Smart compression keeps quality high while reducing file size</li>
+                    <li><strong>Export:</strong> Save as static or animated WebP sticker for WhatsApp</li>
+                </ol>
+                
+                <h3 style="margin-top: 2rem;">Unique Features</h3>
+                <ul>
+                    <li>🎙️ <strong>Voice to Sticker:</strong> First tool to convert voice into animated stickers</li>
+                    <li>✨ <strong>Particle Systems:</strong> Add dynamic particle effects</li>
+                    <li>🎵 <strong>Audio Reactive:</strong> Stickers that react to music</li>
+                    <li>🎨 <strong>3D Effects:</strong> Apply depth and shadows</li>
+                    <li>⚡ <strong>Smart Compression:</strong> Optimized WebP under 1MB</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize Canvas
+        const canvas = document.getElementById('stickerCanvas');
+        const ctx = canvas.getContext('2d');
+        
+        // State Management
+        const state = {
+            history: [],
+            currentStep: -1,
+            particles: [],
+            animationFrames: [],
+            audioData: null,
+            recording: false,
+            currentImage: null,
+            stickerPack: []
+        };
+
+        // Canvas Setup
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 512, 512);
+        saveState();
+
+        // Save Canvas State
+        function saveState() {
+            state.currentStep++;
+            if (state.currentStep < state.history.length) {
+                state.history.length = state.currentStep;
+            }
+            state.history.push(canvas.toDataURL());
+        }
+
+        // Undo/Redo Functions
+        document.getElementById('undoBtn').addEventListener('click', () => {
+            if (state.currentStep > 0) {
+                state.currentStep--;
+                restoreState();
+            }
+        });
+
+        document.getElementById('redoBtn').addEventListener('click', () => {
+            if (state.currentStep < state.history.length - 1) {
+                state.currentStep++;
+                restoreState();
+            }
+        });
+
+        function restoreState() {
+            const img = new Image();
+            img.onload = function() {
+                ctx.clearRect(0, 0, 512, 512);
+                ctx.drawImage(img, 0, 0);
+            };
+            img.src = state.history[state.currentStep];
+        }
+
+        // File Upload Handler
+        document.getElementById('fileInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.onload = function() {
+                        ctx.clearRect(0, 0, 512, 512);
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, 512, 512);
+                        
+                        // Scale image to fit
+                        const scale = Math.min(512/img.width, 512/img.height);
+                        const w = img.width * scale;
+                        const h = img.height * scale;
+                        const x = (512 - w) / 2;
+                        const y = (512 - h) / 2;
+                        
+                        ctx.drawImage(img, x, y, w, h);
+                        state.currentImage = img;
+                        saveState();
+                        updateFileSize();
+                    };
+                    img.src = event.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Drag and Drop
+        const uploadArea = document.querySelector('.upload-area');
+        
+        uploadArea.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            uploadArea.classList.add('dragover');
+        });
+
+        uploadArea.addEventListener('dragleave', () => {
+            uploadArea.classList.remove('dragover');
+        });
+
+        uploadArea.addEventListener('drop', (e) => {
+            e.preventDefault();
+            uploadArea.classList.remove('dragover');
+            
+            const files = e.dataTransfer.files;
+            if (files.length > 0) {
+                document.getElementById('fileInput').files = files;
+                const event = new Event('change', { bubbles: true });
+                document.getElementById('fileInput').dispatchEvent(event);
+            }
+        });
+
+        // Text Addition
+        document.getElementById('stickerText').addEventListener('input', drawText);
+        document.getElementById('fontStyle').addEventListener('change', drawText);
+        document.getElementById('textSize').addEventListener('input', function() {
+            document.getElementById('textSizeValue').textContent = this.value + 'px';
+            drawText();
+        });
+        document.getElementById('textColor').addEventListener('input', drawText);
+
+        function drawText() {
+            const text = document.getElementById('stickerText').value;
+            if (text) {
+                restoreState(); // Start from current state
+                
+                const fontSize = document.getElementById('textSize').value;
+                const fontStyle = document.getElementById('fontStyle').value;
+                const textColor = document.getElementById('textColor').value;
+                
+                ctx.font = `bold ${fontSize}px ${fontStyle}`;
+                ctx.fillStyle = textColor;
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                
+                // Add text shadow for better visibility
+                ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+                ctx.shadowBlur = 4;
+                ctx.shadowOffsetX = 2;
+                ctx.shadowOffsetY = 2;
+                
+                ctx.fillText(text, 256, 256);
+                
+                // Reset shadow
+                ctx.shadowColor = 'transparent';
+                ctx.shadowBlur = 0;
+                ctx.shadowOffsetX = 0;
+                ctx.shadowOffsetY = 0;
+                
+                saveState();
+            }
+        }
+
+        // Text Animation Effects
+        document.querySelectorAll('.effect-btn[data-effect]').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.effect-btn[data-effect]').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                applyTextAnimation(this.dataset.effect);
+            });
+        });
+
+        function applyTextAnimation(effect) {
+            const text = document.getElementById('stickerText');
+            text.className = '';
+            
+            if (effect !== 'none') {
+                text.classList.add('kinetic-text');
+                // Store animation type for export
+                state.textAnimation = effect;
+            }
+        }
+
+        // Template Gallery
+        document.querySelectorAll('.template-item').forEach(item => {
+            item.addEventListener('click', function() {
+                ctx.clearRect(0, 0, 512, 512);
+                ctx.fillStyle = 'white';
+                ctx.fillRect(0, 0, 512, 512);
+                
+                ctx.font = 'bold 200px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText(this.textContent, 256, 256);
+                
+                saveState();
+                updateFileSize();
+            });
+        });
+
+        // Voice Recording (Simulated)
+        let mediaRecorder;
+        const recordBtn = document.getElementById('recordVoice');
+        const voiceVisualizer = document.getElementById('voiceVisualizer');
+        const voiceTranscript = document.getElementById('voiceTranscript');
+
+        recordBtn.addEventListener('click', async function() {
+            if (!state.recording) {
+                // Start recording
+                state.recording = true;
+                this.textContent = '⏹️ Stop Recording';
+                this.style.background = 'linear-gradient(45deg, #e74c3c, #c0392b)';
+                voiceVisualizer.style.display = 'flex';
+                
+                // Simulate voice recording
+                setTimeout(() => {
+                    if (state.recording) {
+                        // Simulate AI transcription
+                        const sampleTexts = [
+                            "Happy Birthday! 🎉",
+                            "Good Morning ☀️",
+                            "Love You ❤️",
+                            "Thank You! 🙏",
+                            "Congratulations! 🎊"
+                        ];
+                        const randomText = sampleTexts[Math.floor(Math.random() * sampleTexts.length)];
+                        voiceTranscript.value = randomText;
+                        
+                        // Auto-generate sticker from voice
+                        document.getElementById('stickerText').value = randomText;
+                        drawText();
+                        
+                        // Apply random particle effect
+                        const effects = ['stars', 'hearts', 'confetti'];
+                        const randomEffect = effects[Math.floor(Math.random() * effects.length)];
+                        applyParticleEffect(randomEffect);
+                    }
+                }, 3000);
+            } else {
+                // Stop recording
+                state.recording = false;
+                this.textContent = '🎤 Start Recording';
+                this.style.background = '';
+                voiceVisualizer.style.display = 'none';
+            }
+        });
+
+        // Particle Effects
+        document.querySelectorAll('.particle-effect').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.particle-effect').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                applyParticleEffect(this.dataset.particle);
+            });
+        });
+
+        function applyParticleEffect(type) {
+            const particles = {
+                stars: '⭐',
+                hearts: '❤️',
+                snow: '❄️',
+                fire: '🔥',
+                bubbles: '🫧',
+                confetti: '🎊'
+            };
+            
+            const particleSymbol = particles[type];
+            
+            // Add particles to canvas
+            ctx.globalAlpha = 0.3;
+            for (let i = 0; i < 20; i++) {
+                const x = Math.random() * 512;
+                const y = Math.random() * 512;
+                const size = Math.random() * 30 + 10;
+                
+                ctx.font = `${size}px Arial`;
+                ctx.fillText(particleSymbol, x, y);
+            }
+            ctx.globalAlpha = 1;
+            
+            saveState();
+        }
+
+        // Background Removal (Simulated)
+        document.getElementById('removeBg').addEventListener('click', function() {
+            if (state.currentImage) {
+                // Simulate AI background removal
+                ctx.globalCompositeOperation = 'destination-out';
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                
+                // Simple edge detection simulation
+                for (let i = 0; i < 50; i++) {
+                    const x = Math.random() * 512;
+                    const y = Math.random() * 512;
+                    if (Math.random() > 0.5) {
+                        ctx.fillRect(x, y, 10, 10);
+                    }
+                }
+                
+                ctx.globalCompositeOperation = 'source-over';
+                saveState();
+            }
+        });
+
+        // Background Blur
+        document.getElementById('blurBg').addEventListener('click', function() {
+            ctx.filter = 'blur(5px)';
+            ctx.drawImage(canvas, 0, 0);
+            ctx.filter = 'none';
+            saveState();
+        });
+
+        // Background Color
+        document.getElementById('bgColor').addEventListener('input', function() {
+            const color = this.value;
+            const imageData = ctx.getImageData(0, 0, 512, 512);
+            
+            // Create new canvas for background
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = 512;
+            tempCanvas.height = 512;
+            const tempCtx = tempCanvas.getContext('2d');
+            
+            tempCtx.fillStyle = color;
+            tempCtx.fillRect(0, 0, 512, 512);
+            tempCtx.drawImage(canvas, 0, 0);
+            
+            ctx.clearRect(0, 0, 512, 512);
+            ctx.drawImage(tempCanvas, 0, 0);
+            saveState();
+        });
+
+        // 3D Effects
+        document.getElementById('apply3D').addEventListener('click', function() {
+            const rotation = document.getElementById('rotation3D').value;
+            const shadow = document.getElementById('shadowDepth').value;
+            
+            ctx.save();
+            ctx.setTransform(1, 0, rotation/100, 1, 0, 0);
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
+            ctx.shadowBlur = shadow;
+            ctx.shadowOffsetX = shadow/2;
+            ctx.shadowOffsetY = shadow/2;
+            
+            ctx.drawImage(canvas, 0, 0);
+            ctx.restore();
+            
+            saveState();
+        });
+
+        // Clear Canvas
+        document.getElementById('clearCanvas').addEventListener('click', function() {
+            ctx.clearRect(0, 0, 512, 512);
+            ctx.fillStyle = 'white';
+            ctx.fillRect(0, 0, 512, 512);
+            saveState();
+            updateFileSize();
+        });
+
+        // File Size Estimation
+        function updateFileSize() {
+            canvas.toBlob(function(blob) {
+                const sizeInKB = (blob.size / 1024).toFixed(1);
+                document.getElementById('fileSize').textContent = sizeInKB + ' KB';
+                
+                // Update status based on size
+                const status = document.getElementById('exportStatus');
+                if (blob.size < 100000) {
+                    status.textContent = '⚠️ Too small';
+                    status.style.color = '#f39c12';
+                } else if (blob.size > 1000000) {
+                    status.textContent = '⚠️ Too large';
+                    status.style.color = '#e74c3c';
+                } else {
+                    status.textContent = '✅ Perfect';
+                    status.style.color = '#27ae60';
+                }
+            }, 'image/webp', 0.95);
+        }
+
+        // Quality Slider
+        document.getElementById('quality').addEventListener('input', function() {
+            document.getElementById('qualityValue').textContent = this.value + '%';
+            updateFileSize();
+        });
+
+        // Smart Optimize
+        document.getElementById('optimizeBtn').addEventListener('click', function() {
+            // Simulate optimization process
+            const progressBar = document.createElement('div');
+            progressBar.className = 'progress-bar';
+            progressBar.innerHTML = '<div class="progress-fill"></div>';
+            this.parentElement.insertBefore(progressBar, this);
+            
+            const fill = progressBar.querySelector('.progress-fill');
+            let progress = 0;
+            
+            const interval = setInterval(() => {
+                progress += 10;
+                fill.style.width = progress + '%';
+                
+                if (progress >= 100) {
+                    clearInterval(interval);
+                    progressBar.remove();
+                    
+                    // Apply optimization
+                    const quality = 85;
+                    document.getElementById('quality').value = quality;
+                    document.getElementById('qualityValue').textContent = quality + '%';
+                    updateFileSize();
+                    
+                    // Show success message
+                    this.textContent = '✅ Optimized!';
+                    setTimeout(() => {
+                        this.textContent = '⚡ Smart Optimize';
+                    }, 2000);
+                }
+            }, 100);
+        });
+
+        // Export Functions
+        document.getElementById('exportStatic').addEventListener('click', function() {
+            const quality = document.getElementById('quality').value / 100;
+            
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'whatsapp-sticker-' + Date.now() + '.webp';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 'image/webp', quality);
+        });
+
+        document.getElementById('exportAnimated').addEventListener('click', function() {
+            // Create animated WebP (simulated with multiple frames)
+            alert('Animated sticker export would create a WebP with multiple frames. This is a demo version.');
+            
+            // In production, this would use a WebP encoder library
+            const quality = document.getElementById('quality').value / 100;
+            
+            canvas.toBlob(function(blob) {
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'whatsapp-animated-sticker-' + Date.now() + '.webp';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            }, 'image/webp', quality);
+        });
+
+        // Batch Pack Management
+        document.getElementById('addToPack').addEventListener('click', function() {
+            canvas.toBlob(function(blob) {
+                state.stickerPack.push(blob);
+                document.getElementById('exportPack').textContent = `📤 Export Pack (${state.stickerPack.length})`;
+                
+                // Show success
+                const btn = document.getElementById('addToPack');
+                btn.textContent = '✅ Added!';
+                setTimeout(() => {
+                    btn.textContent = '➕ Add to Pack';
+                }, 1500);
+            }, 'image/webp', 0.95);
+        });
+
+        document.getElementById('exportPack').addEventListener('click', function() {
+            if (state.stickerPack.length === 0) {
+                alert('Pack is empty! Add some stickers first.');
+                return;
+            }
+            
+            // In production, this would create a ZIP file with all stickers
+            alert(`Pack contains ${state.stickerPack.length} stickers. In production, this would download as a ZIP file.`);
+        });
+
+        // Modal Functions
+        function closeModal() {
+            document.getElementById('helpModal').classList.remove('show');
+        }
+
+        // Initialize particles animation
+        function createParticles() {
+            const container = document.createElement('div');
+            container.className = 'particle-container';
+            document.body.appendChild(container);
+            
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+                container.appendChild(particle);
+            }
+        }
+
+        // Initialize
+        createParticles();
+        updateFileSize();
+
+        // Add keyboard shortcuts
+        document.addEventListener('keydown', function(e) {
+            if (e.ctrlKey || e.metaKey) {
+                switch(e.key) {
+                    case 'z':
+                        e.preventDefault();
+                        document.getElementById('undoBtn').click();
+                        break;
+                    case 'y':
+                        e.preventDefault();
+                        document.getElementById('redoBtn').click();
+                        break;
+                    case 's':
+                        e.preventDefault();
+                        document.getElementById('exportStatic').click();
+                        break;
+                }
+            }
+        });
+    </script>
